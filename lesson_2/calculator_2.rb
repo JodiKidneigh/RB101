@@ -10,7 +10,8 @@ def prompt(message)
 end
 
 def valid_number?(number)
-  number.to_i != 0
+  check = number.to_i()
+  check.integer?()
 end
 
 prompt("Welcome to the Calculator! Enter your name:")
@@ -96,7 +97,7 @@ loop do
   puts("")
 
 
-  prompt("Do you want to performa another calculation? (Y to calculate again)")
+  prompt("Do you want to perform another calculation? (Y to calculate again)")
   answer = Kernel.gets().chomp()
   break unless answer.downcase().start_with?('y')
 end
