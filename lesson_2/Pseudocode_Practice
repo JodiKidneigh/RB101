@@ -1,0 +1,50 @@
+Pseudocode practice Lesson 2
+
+1. A method that returns the sum of two integers
+
+	Method accepting two integer parameters.
+	In method body add the two integers together.
+	Return the sum of the two integers.
+	Save input numbers as two variables.
+	Call the method sending the two number variables as arguments.
+	Save the return of the method to a variable.
+	
+2. A method that takes an array of strings, and returns a string that is all those strings concatenated together.
+
+	Method accepting an array of strings as a parameter.
+	A variable called concatenated_strings.
+	In method body loop through the array and add each element of the array  OR
+	Join the array elements and save to the concatenated_strings variable.
+	Return the concatenated_strings variable.
+	Call the method sending an array of strings and saving the return of the method to a 				variable.
+	
+3. A method that takes an array of integers, and returns a new array with every other element from the original array, starting with the first element.
+
+	Method accepting an array of integers as a parameter.
+	In method body, loop through the array and append the first element of the array to a new array, skip the next element and add the following element until the end of the original array.
+	Return the new array.
+	Call the method sending an array of integers as an argument.  
+	Save the return results in an array variable.
+	
+	
+4. A method that determines the index of the 3rd occurrence of a given character in a string.  If the character does not appear at least three times, return nil.
+
+	Method accepting a string, and a character as parameters.
+	Index tracker and character counter variables.
+	In method body, while counter < 3 loop through string, if character in string matches given character, save index of string character to index tracker variable, increment counter.
+	When counter is equal to 3, return index tracker.
+	Call method sending string and given character as arguments.
+	Save method return to variable.
+	
+5. A method that takes two arrays of numbers and returns the result of merging the arrays.  The elements of the first array should become the elements at the even indexes of the returned array, while the elements of the second array should become the elements at the odd indexes.  Assume that both arrays have the same number of elements.
+
+	Method accepting two integer arrays as parameters.
+	Loop through the arrays using merge OR
+	Create a new array.
+	Loop through both arrays in a nested loop(first array first.)
+	Add each element to new array. (Alternating between first and second). OR
+	Loop through both arrays and insert item from second array after the corresponding item in the first array until the end of the second array.
+	Return the merged array.
+	Call the method sending two integer arrays as arguments and saving the return value to an array variable.
+	
+	
