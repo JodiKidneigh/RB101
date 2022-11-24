@@ -10,8 +10,7 @@ def prompt(message)
 end
 
 def valid_number?(number)
-  check = number.to_i()
-  check.integer?()
+  number.to_i.to_s == number
 end
 
 prompt("Welcome to the Calculator! Enter your name:")
@@ -57,42 +56,55 @@ loop do
   operation = ''
   answer = 0
   operation_message = ''
-  prompt("Choose an operation: + - * /")
+
+  if number2.to_i == 0
+    prompt("Note: Division by zero is not allowed.")
+    prompt("Choose an operation: + - * ")
+  else
+    prompt("Choose an operation: = - * / ")
+  end
 
   loop do
     operation = Kernel.gets().chomp()
     answer = case operation
-             when  " + "
+             when  "+"
                answer = number1.to_i + number2.to_i
                operation_message = "Adding"
                break
-             when  " - "
+             when  "-"
                answer = number1.to_i - number2.to_i
                operation_message = "Subtracting"
                break
-             when  " * "
+             when  "*"
                answer = number1.to_i * number2.to_i
                operation_message = "Multiplying"
                break
-             when  " / "
-               answer = number1.to_f / number2.to_f
-               operation_message = "Dividing"
-               break
+             when  "/"
+               if number2.to_f == 0
+                 prompt("Division by zero not allowed.") 
+                 break
+               else
+                 answer = number1.to_f / number2.to_f
+                 operation_message = "Dividing"
+                 break
+               end
              else
                prompt("Must choose + - * /")
              end
   end
+  if answer == nil
+    puts("Invalid operation")
+  else
+    prompt("#{operation_message} the two numbers...")
 
-  prompt("#{operation_message} the two numbers...")
+    prompt("#{number1} #{operation} #{number2} = #{answer}")
 
-  prompt("#{number1} #{operation} #{number2} = #{answer}")
-
-  puts("_____________________________________________")
-  puts("")
-
-  prompt("Do you want to perform another calculation? (Y to calculate again)")
-  answer = Kernel.gets().chomp()
-  break unless answer.downcase().start_with?('y')
+    puts("_____________________________________________")
+    puts("")
+  end
+    prompt("Do you want to perform another calculation? (Y to calculate again)")
+    answer = Kernel.gets().chomp()
+    break unless answer.downcase().start_with?('y')
 end
 
 prompt("Thank you for using the calculator, Goodbye!")
