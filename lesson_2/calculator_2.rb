@@ -18,7 +18,7 @@ prompt("Welcome to the Calculator! Enter your name:")
 
 name = ''
 
-loop do 
+loop do
   name = Kernel.gets().chomp()
   if name.empty?()
     prompt("Make sure to use a valid name.")
@@ -31,9 +31,7 @@ number1 = ''
 
 prompt("Hi #{name}!")
 
-
 loop do
-
   loop do
     prompt("Please enter a number:")
     number1 = Kernel.gets().chomp()
@@ -43,7 +41,6 @@ loop do
       prompt("Not a valid number!")
     end
   end
-
 
   number2 = ''
 
@@ -60,33 +57,30 @@ loop do
   operation = ''
   answer = 0
   operation_message = ''
-  
   prompt("Choose an operation: + - * /")
-  
-  loop do  
+
+  loop do
     operation = Kernel.gets().chomp()
-    
     answer = case operation
-      when  "+"
-        answer = number1.to_i +  number2.to_i
-        operation_message = "Adding"
-        break
-      when  "-"  
-        answer = number1.to_i -  number2.to_i
-        operation_message = "Subtracting"
-        break
-      when  "*"  
-        answer = number1.to_i *  number2.to_i
-        operation_message = "Multiplying"
-        break
-      when  "/"  
-        answer = number1.to_f /  number2.to_f
-        operation_message = "Dividing"
-        break
-      else
-        prompt("Must choose + - * /")
-    
-    end  
+             when  " + "
+               answer = number1.to_i + number2.to_i
+               operation_message = "Adding"
+               break
+             when  " - "
+               answer = number1.to_i - number2.to_i
+               operation_message = "Subtracting"
+               break
+             when  " * "
+               answer = number1.to_i * number2.to_i
+               operation_message = "Multiplying"
+               break
+             when  " / "
+               answer = number1.to_f / number2.to_f
+               operation_message = "Dividing"
+               break
+             else
+               prompt("Must choose + - * /")
+             end
   end
 
   prompt("#{operation_message} the two numbers...")
@@ -96,13 +90,9 @@ loop do
   puts("_____________________________________________")
   puts("")
 
-
   prompt("Do you want to perform another calculation? (Y to calculate again)")
   answer = Kernel.gets().chomp()
   break unless answer.downcase().start_with?('y')
 end
 
 prompt("Thank you for using the calculator, Goodbye!")
-
-
-
