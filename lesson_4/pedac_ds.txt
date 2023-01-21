@@ -1,0 +1,24 @@
+# PROBLEM:
+
+# Given a string, write a method `palindrome_substrings` which returns
+# all the substrings from a given string which are palindromes. Consider
+# palindrome words case sensitive.
+
+# Test cases:
+
+# palindrome_substrings("supercalifragilisticexpialidocious") == ["ili"]
+# palindrome_substrings("abcddcbA") == ["bcddcb", "cddc", "dd"]
+# palindrome_substrings("palindrome") == []
+# palindrome_substrings("") == []
+
+#Inputs:
+# String
+
+#Outputs:
+#Any Strings within the given string that are the same forwards and backwards including case sensitivity.
+#Rules:
+1. Output words must be palindromes.
+2. Palindromes are case sensitive (Mom is not a palindrome, but MOM is.)
+3. Format of Output is an Array
+
+
